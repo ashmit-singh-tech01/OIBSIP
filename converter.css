@@ -1,0 +1,211 @@
+/* This is the background video. It's just for vibes! */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  object-fit: cover;
+  filter: brightness(0.7) blur(1px) !important;
+  pointer-events: none;
+}
+
+/* Here's the main card. Looks fancy, right? */
+.container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 600px;
+  margin: 3.5rem auto;
+  padding: 3.5rem 2.8rem 2.5rem 2.8rem;
+  background: #fff;
+  border-radius: 28px;
+  border: 2px solid #38f9d7;
+  box-shadow: 0 16px 48px rgba(56, 249, 215, 0.22),
+    0 4px 16px rgba(67, 233, 123, 0.15);
+  text-align: center;
+  transition: box-shadow 0.25s, transform 0.25s, background 0.3s, color 0.3s;
+}
+
+.container:hover {
+  box-shadow: 0 28px 64px rgba(56, 249, 215, 0.28),
+    0 8px 32px rgba(67, 233, 123, 0.18);
+  transform: translateY(-2px) scale(1.01);
+}
+
+.toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 1.2rem;
+}
+
+/* This is the toggle switch for dark mode. It's fun to click! */
+.toggle-switch {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle-switch input[type="checkbox"] {
+  display: none;
+}
+
+.toggle-slider {
+  display: inline-block;
+  width: 48px;
+  height: 26px;
+  background: #baffea;
+  border-radius: 16px;
+  position: relative;
+  transition: background 0.3s;
+}
+
+.toggle-slider::before {
+  content: "\2600";
+  /* sun icon */
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 20px;
+  height: 20px;
+  background: #43e97b;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #fff;
+  transition: transform 0.3s, background 0.3s, content 0.3s;
+}
+
+.toggle-switch input[type="checkbox"]:checked+.toggle-slider {
+  background: #2563eb;
+}
+
+.toggle-switch input[type="checkbox"]:checked+.toggle-slider::before {
+  transform: translateX(22px);
+  background: #222e3a;
+  content: "\1F319";
+  /* moon icon */
+}
+
+h1 {
+  color: #009e8e;
+  margin-bottom: 2.2rem;
+  font-size: 2.3rem;
+  letter-spacing: 1px;
+}
+
+.converter-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+/* Labels are blue because, well, blue is nice. */
+label {
+  font-weight: 600;
+  color: #2563eb;
+  margin-bottom: 0.2rem;
+  font-size: 1.13rem;
+}
+
+/* These are the input boxes. They're big so you can't miss them! */
+input[type="number"] {
+  width: 90%;
+  padding: 1.1rem 1.3rem;
+  border: 2px solid #38f9d7;
+  border-radius: 12px;
+  font-size: 1.22rem;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.3s, color 0.3s;
+  outline: none;
+  background: #f6fffa;
+  color: #222e3a;
+}
+
+input[type="number"]:focus {
+  border-color: #43e97b;
+  box-shadow: 0 0 0 2px #43e97b33;
+}
+
+input[type="number"]:hover {
+  border-color: #2563eb;
+}
+
+footer {
+  margin-top: 2.7rem;
+  color: #38f9d7;
+  font-size: 1.08rem;
+  letter-spacing: 1px;
+}
+
+/* Dark Mode Styles */
+/* If you want dark mode, this is where the magic happens. */
+body.dark-mode {
+  background: linear-gradient(135deg, #232b2b 0%, #1a2a2a 100%);
+}
+
+body.dark-mode .container {
+  background: #232b2b;
+  color: #f6fffa;
+  border-color: #2563eb;
+  box-shadow: 0 16px 48px rgba(37, 99, 235, 0.18),
+    0 4px 16px rgba(56, 249, 215, 0.1);
+}
+
+body.dark-mode h1 {
+  color: #43e97b;
+}
+
+body.dark-mode label {
+  color: #43e97b;
+}
+
+body.dark-mode input[type="number"] {
+  background: #1a2a2a;
+  color: #f6fffa;
+  border-color: #2563eb;
+}
+
+body.dark-mode input[type="number"]:focus {
+  border-color: #43e97b;
+  box-shadow: 0 0 0 2px #43e97b33;
+}
+
+body.dark-mode input[type="number"]:hover {
+  border-color: #43e97b;
+}
+
+body.dark-mode footer {
+  color: #43e97b;
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding: 1.5rem 0.5rem 1.5rem 0.5rem;
+    max-width: 98vw;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .converter-card {
+    gap: 1.2rem;
+  }
+
+  input[type="number"] {
+    font-size: 1.05rem;
+    padding: 0.8rem 0.7rem;
+  }
+}

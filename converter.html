@@ -1,0 +1,71 @@
+<!-- Hey there! This is the start of our temperature converter page. -->
+<html>
+
+<head>
+    <title>Temp Converter</title>
+    <link rel="stylesheet" href="converter.css">
+</head>
+
+<body style="margin:0;padding:0;">
+    <!-- Here's our background video! It just loops and looks nice. -->
+    <video autoplay loop muted id="bg-video">
+        <source src="converter bgv.mp4" type="video/mp4">
+        <!-- If your browser can't play the video, you'll just see a blank background. -->
+    </video>
+    <!-- This is the main card where all the magic happens. -->
+    <div class="container"
+        style="width:600px;margin:60px auto 0 auto;border-radius:28px;border:2px solid #38f9d7;box-shadow:0 16px 48px #38f9d736,0 4px 16px #43e97b26;text-align:center;position:relative;z-index:1;padding:50px 30px 30px 30px;">
+        <!-- This little guy lets you switch between light and dark mode. Pretty cool, right? -->
+        <div style="text-align:right;margin-bottom:20px;">
+            <label class="toggle-switch" style="cursor:pointer;display:inline-block;">
+                <input type="checkbox" id="theme-toggle" style="display:none;">
+                <span class="toggle-slider"
+                    style="display:inline-block;width:48px;height:26px;background:#baffea;border-radius:16px;position:relative;vertical-align:middle;"></span>
+            </label>
+        </div>
+        <!-- Big title so you know what this page does! -->
+        <h2 style="color:#009e8e;margin-bottom:30px;font-size:2.3rem;">Temperature Converter</h2>
+        <div>
+            <!-- Here's where you type in your Kelvin value. The other boxes update like magic. -->
+            <div style="margin-bottom:30px;text-align:left;">
+                <label>Kelvin</label><br>
+                <input type="number" id="kelvin" placeholder="Kelvin" min="0" step="any"
+                    style="width:90%;padding:18px 20px;border:2px solid #38f9d7;border-radius:12px;font-size:1.22rem;background:#f6fffa;color:#222e3a;">
+            </div>
+            <!-- Celsius is right here. Change this and the others will follow. -->
+            <div style="margin-bottom:30px;text-align:left;">
+                <label>Celsius</label><br>
+                <input type="number" id="celsius" placeholder="Celsius" step="any"
+                    style="width:90%;padding:18px 20px;border:2px solid #38f9d7;border-radius:12px;font-size:1.22rem;background:#f6fffa;color:#222e3a;">
+            </div>
+            <!-- And of course, Fahrenheit. Because some people like it that way! -->
+            <div style="margin-bottom:30px;text-align:left;">
+                <label>Fahrenheit</label><br>
+                <input type="number" id="fahrenheit" placeholder="Fahrenheit" step="any"
+                    style="width:90%;padding:18px 20px;border:2px solid #38f9d7;border-radius:12px;font-size:1.22rem;background:#f6fffa;color:#222e3a;">
+            </div>
+        </div>
+        <!-- Just a little footer to say who made this. -->
+        <div style="margin-top:40px;color:#38f9d7;font-size:1.08rem;">&copy; 2025 Ashmit Singh</div>
+    </div>
+    <script src="converter.js"></script>
+    <script>
+        // Let's make sure the toggle and dark mode always match up!
+        window.addEventListener('DOMContentLoaded', function () {
+            // This bit makes the background video play faster. Because why not?
+            var bgVideo = document.getElementById('bg-video');
+            if (bgVideo) bgVideo.playbackRate = 2;
+            // This is the dark mode toggle. Click it and watch the magic happen!
+            var themeToggle = document.getElementById('theme-toggle');
+            // If the page is already in dark mode, make sure the toggle is checked
+            if (themeToggle) {
+                themeToggle.checked = document.body.classList.contains('dark-mode');
+                themeToggle.addEventListener('change', function () {
+                    document.body.classList.toggle('dark-mode', this.checked);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

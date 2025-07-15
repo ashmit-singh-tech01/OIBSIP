@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Your Music World | Feel the Music</title>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="music-landing.css">
+</head>
+
+<body>
+    <!-- Hey there! This is the navigation bar where users can hop around the site. -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="#" class="nav-logo">
+                    <i class="fas fa-music"></i>
+                    <span>Forever Music</span>
+                </a>
+            </div>
+
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#discover" class="nav-link dropdown-toggle">
+                            <i class="fas fa-compass"></i>
+                            <span>Discover</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#trending"><i class="fas fa-fire"></i> Trending</a></li>
+                            <li><a href="#new-releases"><i class="fas fa-star"></i> New Releases</a></li>
+                            <li><a href="#playlists"><i class="fas fa-list"></i> Playlists</a></li>
+                            <li><a href="#artists"><i class="fas fa-user"></i> Artists</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#features" class="nav-link">
+                            <i class="fas fa-star"></i>
+                            <span>Why Us?</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#gallery" class="nav-link">
+                            <i class="fas fa-images"></i>
+                            <span>Albums</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#newsletter" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Stay Updated</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav-actions">
+                <label for="search-toggle" class="btn-search" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </label>
+                <button class="btn-signin">
+                    <i class="fas fa-user"></i>
+                    <span>Join Us</span>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- This sneaky checkbox lets us open the search modal with just CSS. No JavaScript needed! -->
+    <input type="checkbox" id="search-toggle" class="search-toggle">
+
+    <!-- Here comes the search popup! Users can look for their favorite tunes. -->
+    <div class="search-modal">
+        <label for="search-toggle" class="search-overlay"></label>
+        <div class="search-container">
+            <div class="search-header">
+                <h3><i class="fas fa-search"></i> What do you want to listen to today?</h3>
+                <label for="search-toggle" class="search-close" aria-label="Close search">
+                    <i class="fas fa-times"></i>
+                </label>
+            </div>
+            <div class="search-content">
+                <div class="search-input-group">
+                    <input type="text" placeholder="Type a song, artist, or mood..." class="search-input">
+                    <button class="search-submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="search-suggestions">
+                    <h4>Try searching for:</h4>
+                    <div class="suggestion-tags">
+                        <span class="suggestion-tag">Feel Good</span>
+                        <span class="suggestion-tag">Rainy Day</span>
+                        <span class="suggestion-tag">Road Trip</span>
+                        <span class="suggestion-tag">Morning Energy</span>
+                        <span class="suggestion-tag">Relax & Unwind</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- This is the hero section – the big, bold intro with a video background. Sets the vibe! -->
+    <header class="hero" id="home">
+        <video class="hero-bg-video" autoplay muted loop playsinline>
+            <source src="particles.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="sheen-title">Music Forever
+                    <span class="sheen-effect"></span>
+                </h1>
+                <p class="hero-desc">Your soundtrack for every moment. Discover, stream, and share the music you love.
+                </p>
+
+                <a href="#" class="cta-btn">Let’s Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Why should users love this site? The features section tells them exactly that. -->
+    <section class="features" id="features">
+        <h2 class="section-title">Why You'll Love It Here</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fa-solid fa-headphones-simple"></i>
+                <h3>Crystal-Clear Sound</h3>
+                <p>Enjoy every beat and lyric with stunning audio quality—just like the artist intended.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-music"></i>
+                <h3>Playlists for Every Mood</h3>
+                <p>Find the perfect playlist for your vibe, handpicked by real music lovers (just like you!).</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-cloud-arrow-down"></i>
+                <h3>Listen Anywhere</h3>
+                <p>Download your favorites and take your music with you—no WiFi needed.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-users"></i>
+                <h3>Friendly Community</h3>
+                <p>Share your playlists, discover new friends, and connect over the music you love.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Check out what's trending! This gallery shows off the hottest albums right now. -->
+    <section class="gallery" id="gallery">
+        <h2 class="section-title">What’s Hot Right Now</h2>
+        <div class="gallery-grid">
+            <div class="album">
+                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
+                    alt="Album 1">
+                <div class="album-title">Chill Vibes</div>
+            </div>
+            <div class="album">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                    alt="Album 2">
+                <div class="album-title">Acoustic Sessions</div>
+            </div>
+            <div class="album">
+                <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80"
+                    alt="Album 3">
+                <div class="album-title">Top Hits</div>
+            </div>
+            <div class="album">
+                <img src="image.png" alt="Album 4">
+                <div class="album-title">Indie Mix</div>
+            </div>
+            <div class="album">
+                <img src="https://images.unsplash.com/photo-1470229538611-16ba8c7ffbd7?auto=format&fit=crop&w=400&q=80"
+                    alt="Album 5">
+                <div class="album-title">Electronic Beats</div>
+            </div>
+            <div class="album">
+                <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+                    alt="Album 6">
+                <div class="album-title">Classic Rock</div>
+            </div>
+            <div class="album">
+                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
+                    alt="Album 7">
+                <div class="album-title">Jazz Nights</div>
+            </div>
+            <div class="album">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                    alt="Album 8">
+                <div class="album-title">Pop Essentials</div>
+            </div>
+            <div class="album">
+                <img src="https://images.unsplash.com/photo-1465101054584-6d4a5e6b1b8b?auto=format&fit=crop&w=400&q=80"
+                    alt="Album 9">
+                <div class="album-title">Summer Beats</div>
+            </div>
+            <div class="album">
+                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=400&q=80"
+                    alt="Album 10">
+                <div class="album-title">Night Drive</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Want to keep up with the latest? The newsletter section invites users to join the music fam. -->
+    <section class="newsletter" id="newsletter">
+        <div class="newsletter-content">
+            <h2>Stay in the Loop 🎶</h2>
+            <p>Want fresh playlists, new releases, and exclusive updates? Drop your email below and join our music
+                family!</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your best email goes here..." required>
+                <button type="submit">Count Me In!</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- And finally, the footer! Social links and a little love for music fans. -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-icons">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>&copy; 2025 Feel the Music. Made with <span style="color:#ff69b4;">♥</span> for music lovers everywhere.
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>
